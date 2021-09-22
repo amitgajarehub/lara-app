@@ -43,43 +43,6 @@ class BannerController extends Controller
         }
     }
 
-    // public function store_count($request, $type)
-    // {
-    //     //using array limit
-    //     return Banner::where('banner_type', $type)
-    //     ->where('isActive', 1)->count() < $this->limits[$type] && $request->isActive == 1;
-    // }
-
-    // public function update_count($banner, $type)
-    // {
-    //     return Banner::whereNotIn('id', [$banner->id])
-    //     ->where('isActive', 1)
-    //     ->where('type', $banner->banner_type)->count() < $this->limits[$type] && $banner->isActive == 1;
-    // }
-
-    // public function store(Request $request)
-    // {
-    //     //validating form data
-    //     $data = $request->validate([
-    //         'title' => "required",
-    //         'url' => "required",
-    //         'image' => "required",
-    //         'image_title' => "max:255",
-    //         'image_alt' => "max:255",
-    //         'banner_type' => "required|in:small,medium,large,news",
-    //         'isActive' => "nullable|in:0,1" //active or not
-    //     ]);
-
-    //     //validating images active count
-    //     if (!$this->store_count($request, $request->banner_type)) {
-    //     return redirect()->back()->withInput($request->all())
-    //         ->withErrors(['isActive' => ' نمیتوان بیشتر از ' . $this->limits[$request['banner_type']] . ' عکس برای این بنر آپلود کرد! ']);
-    // }
-
-    //     Banner::create($data);
-    //     return redirect(route('admin.banners.index'));
-    // }
-
     public function show($id)
     {
         $banner = Banner::findOrFail($id);
