@@ -7,6 +7,7 @@
     @include('frontend.header')    
 
     @include('frontend.banner.index')
+    @include('frontend.product.index')
         
     @include('layout.bottomhead')
     @include('frontend.footer')

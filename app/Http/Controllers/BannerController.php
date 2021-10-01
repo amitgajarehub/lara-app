@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Banner;
 use App\Models\Category;
+use App\Models\Product;
 
 class BannerController extends Controller
 {
@@ -18,7 +19,8 @@ class BannerController extends Controller
     {
         $banners = Banner::get();
         $categories = Category::get();
-        return view('home', compact(['banners', 'categories']));
+        $products = Product::get();
+        return view('home', compact(['banners', 'categories', 'products']));
     }
 
     public function add(Request $req)

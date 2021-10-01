@@ -45,6 +45,12 @@
                     @if ($category->parent)
                         <li class="nav-item">
                             <a class="nav-link font-weight-bold" href="{{ route('login') }}">{{ $category->parent->name}}</a>
+                            
+                            @if($category->parent_id == $category->parent->id)   
+                            <ul class="child navbar-nav">
+                                <li class="child nav-item">{{$category->name}}</li>
+                            </ul>
+                            @endif
                         </li>
                     @endif        
                 @endforeach
